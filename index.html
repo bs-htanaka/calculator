@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>電卓</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+        <script src=""></script>
+    </head>
+    <body>
+        <div id="app">
+            <table>
+                <tr>
+                    <td colspan="3">
+                        <input type="text" id="output" value="0" v-model="result">
+                    </td>
+                    <td>
+                        <button value="c" @click="calculate('c')">C</button>
+                    </td>
+                </tr>
+                <tr v-for="row in items">
+                    <td v-for="column in row">
+                        <button v-on:click="calculate(column)">{{column}}</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script src="calculator.js"></script>
+    </body>
+</html>
